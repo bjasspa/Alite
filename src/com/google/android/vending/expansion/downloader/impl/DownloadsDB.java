@@ -197,7 +197,7 @@ public class DownloadsDB {
             int numSchemas = sSchemas.length;
             for (int i = 0; i < numSchemas; i++) {
                 try {
-                    String[][] schema = (String[][]) sSchemas[i];
+                    String[][] schema = sSchemas[i];
                     paramSQLiteDatabase.execSQL(createTableQueryFromArray(
                             sTables[i], schema));
                 } catch (Exception localException) {

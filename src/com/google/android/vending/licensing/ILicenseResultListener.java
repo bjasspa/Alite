@@ -26,8 +26,7 @@ public interface ILicenseResultListener extends android.os.IInterface {
 			if ((obj == null)) {
 				return null;
 			}
-			android.os.IInterface iin = (android.os.IInterface) obj
-					.queryLocalInterface(DESCRIPTOR);
+			android.os.IInterface iin = obj.queryLocalInterface(DESCRIPTOR);
 			if (((iin != null) && (iin instanceof com.google.android.vending.licensing.ILicenseResultListener))) {
 				return ((com.google.android.vending.licensing.ILicenseResultListener) iin);
 			}

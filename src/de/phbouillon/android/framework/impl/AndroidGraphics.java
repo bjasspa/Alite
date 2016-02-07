@@ -132,8 +132,8 @@ public class AndroidGraphics implements Graphics {
 			newHeight = bitmap.getHeight() * Settings.textureLevel * scaleFactor;
 			int textureWidth = determineTextureSize((int) newWidth);
 			int textureHeight = determineTextureSize((int) newHeight);
-			tx2 = (float) newWidth / (float) textureWidth;
-			ty2 = (float) newHeight / (float) textureHeight;
+			tx2 = newWidth / (float) textureWidth;
+			ty2 = newHeight / (float) textureHeight;
 			Bitmap scaledBitmap = Bitmap.createBitmap(textureWidth, textureHeight, bitmap.getConfig());
 		
 			float ratioX = newWidth / (float) bitmap.getWidth();
@@ -169,8 +169,8 @@ public class AndroidGraphics implements Graphics {
 		float newHeight = bitmap.getHeight();
 		int textureWidth = determineTextureSize((int) newWidth);
 		int textureHeight = determineTextureSize((int) newHeight);
-		float tx2 = (float) newWidth / (float) textureWidth;
-		float ty2 = (float) newHeight / (float) textureHeight;
+		float tx2 = newWidth / (float) textureWidth;
+		float ty2 = newHeight / (float) textureHeight;
 		Bitmap scaledBitmap = Bitmap.createBitmap(textureWidth, textureHeight, bitmap.getConfig());
 		
 		float ratioX = newWidth / (float) bitmap.getWidth();
@@ -460,7 +460,7 @@ public class AndroidGraphics implements Graphics {
 		if (font == null) {
 			return;
 		}
-		float alpha = (float) ((((long) color) & (long) 0xFF000000) >> 24) / 255.0f;
+		float alpha = (float) ((color & (long) 0xFF000000) >> 24) / 255.0f;
 		float red   = ((color & 0x00FF0000) >> 16) / 255.0f;
 		float green = ((color & 0x0000FF00) >>  8) / 255.0f;
 		float blue  =  (color & 0x000000FF)        / 255.0f;

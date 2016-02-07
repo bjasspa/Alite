@@ -35,7 +35,7 @@ public class AliteMarket extends Market {
 			int val = tradeGood == store.alienItems() ? 0 : q & 0x3f;
 			quantity.put(tradeGood, val);
 			
-			q = (char) (((char) (tradeGood.getBasePrice() + changing + product)));
+			q = (char) (tradeGood.getBasePrice() + changing + product);
 			val = q * 4;
 			price.put(tradeGood, val);
 		}

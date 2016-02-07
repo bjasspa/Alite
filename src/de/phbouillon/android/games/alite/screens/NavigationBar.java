@@ -233,7 +233,7 @@ public class NavigationBar {
 			y = positionCounter * SIZE;
 			long color = counter == activeIndex ? AliteColors.get().selectedText() : AliteColors.get().message();
 			int yPos = entry.image == null ? (int) (y + (SIZE >> 1) - halfHeight + Assets.regularFont.getSize() / 2) - position :
-				                             (int) (y + SIZE - position - 10);
+				                             (y + SIZE - position - 10);
 			
 			g.drawText(entry.title, 1920 - (SIZE >> 1) - halfWidth, yPos, color, Assets.regularFont);
 			counter++;
@@ -412,7 +412,7 @@ public class NavigationBar {
 				SoundManager.play(Assets.click);
 				try {
 					AliteLog.d("[ALITE]", "Performing autosave. [Launch]");
-					((Alite) game).getFileUtils().autoSave((Alite) game);
+					game.getFileUtils().autoSave(game);
 				} catch (Exception e) {
 					AliteLog.e("[ALITE]", "Autosaving commander failed.", e);
 				}

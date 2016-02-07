@@ -110,7 +110,7 @@ public class HackerScreen extends AliteScreen {
 			int result = 0;
 			int counter = 0;
 			for (; bytes >= 0; bytes--) {
-				result += (int) (values[offset + counter++] & 0xFF) << (bytes << 3);
+				result += (values[offset + counter++] & 0xFF) << (bytes << 3);
 			}
 			return result;
 		}

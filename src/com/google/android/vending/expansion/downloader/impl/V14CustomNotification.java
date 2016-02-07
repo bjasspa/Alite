@@ -59,7 +59,7 @@ public class V14CustomNotification implements DownloadNotification.ICustomNotifi
     }
 
     @SuppressWarnings("deprecation")
-	@Override
+    @Override
     public Notification updateNotification(Context c) {
         Notification.Builder builder = new Notification.Builder(c);
         builder.setContentTitle(mTitle);

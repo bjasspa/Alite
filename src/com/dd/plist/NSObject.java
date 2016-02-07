@@ -320,8 +320,9 @@ public abstract class NSObject {
             }
         }
         if (Map.class.isAssignableFrom(c)) {
-            Map map = (Map)o;
-            Set keys = map.keySet();
+            @SuppressWarnings("unchecked")
+            Map<Object,Object> map = (Map<Object,Object>) o;
+            Set<Object> keys = map.keySet();
             NSDictionary dict = new NSDictionary();
             for(Object key:keys) {
                 Object val = map.get(key);
@@ -330,7 +331,8 @@ public abstract class NSObject {
             return dict;
         }
         if (Collection.class.isAssignableFrom(c)) {
-            Collection coll = (Collection)o;
+            @SuppressWarnings("unchecked")
+            Collection<Object> coll = (Collection<Object>) o;
             return wrap(coll.toArray());
         }
         return wrapSerialized(o);

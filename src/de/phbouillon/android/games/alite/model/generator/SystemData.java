@@ -262,7 +262,7 @@ public class SystemData implements Serializable {
 	}
 	
 	private void computeTextures(SeedType seed) {
-		planetTexture = ((char) (seed.getLoByte(0)) + (char) (seed.getHiByte(1))) % 64;
+		planetTexture = (seed.getLoByte(0) + seed.getHiByte(1)) % 64;
 		ringsTexture  = seed.getLoByte(1) < 128 ? (seed.getLoByte(1) % 15) + 1 : 0;
 		cloudsTexture = seed.getHiByte(2) % 9;
 		starTexture   = (seed.getLoByte(2) + seed.getHiByte(1)) % 21 + (seed.getHiByte(0) > 240 ? 2 : seed.getHiByte(0) > 220 ? 1 : 0);
@@ -455,14 +455,14 @@ public class SystemData implements Serializable {
 	public String toString() {
 		String info = String.format(Locale.getDefault(), "%10s (%3d, %3d) TL: %2d %22s %22s %32s Prod: %8s Diameter: %8d km Pop: %8s %s", 
 				name,
-				(int) x,
-				(int) y,
-				(int) techLevel,
+				x,
+				y,
+				techLevel,
 				economy,
 				govType,
 				inhabitants,
 				getGnp(),
-				(int) diameter,
+				diameter,
 				getPopulation(),
 				description);
 		

@@ -510,16 +510,16 @@ public class GalaxyScreen extends AliteScreen {
 			systemData = new MappedSystemData[temp.size()];
 			int count = 0;
 			for (SystemData system: temp) {
-				int x = (int) ((system.getX() - 128) * SCALE_CONST + HALF_WIDTH);
-				int y = (int) ((system.getY() -  64) * SCALE_CONST + HALF_HEIGHT);
+				int x = (system.getX() - 128) * SCALE_CONST + HALF_WIDTH;
+				int y = (system.getY() -  64) * SCALE_CONST + HALF_HEIGHT;
 				systemData[count++] = new MappedSystemData(system, x, y);
 			}
 		} else {
 			systemData = new MappedSystemData[256];
 			int count = 0;
 			for (SystemData system: ((Alite) game).getGenerator().getSystems()) {
-				int x = (int) ((system.getX() - 128) * SCALE_CONST + HALF_WIDTH);
-				int y = (int) ((system.getY() -  64) * SCALE_CONST + HALF_HEIGHT);
+				int x = (system.getX() - 128) * SCALE_CONST + HALF_WIDTH;
+				int y = (system.getY() -  64) * SCALE_CONST + HALF_HEIGHT;
 				systemData[count++] = new MappedSystemData(system, x, y);
 			}
 		}

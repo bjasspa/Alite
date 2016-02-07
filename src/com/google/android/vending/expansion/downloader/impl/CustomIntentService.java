@@ -72,6 +72,7 @@ public abstract class CustomIntentService extends Service {
 
     protected abstract boolean shouldStop();
 
+    @SuppressWarnings("deprecation")
     @Override
     public void onStart(Intent paramIntent, int startId) {
         if (!this.mServiceHandler.hasMessages(WHAT_MESSAGE)) {

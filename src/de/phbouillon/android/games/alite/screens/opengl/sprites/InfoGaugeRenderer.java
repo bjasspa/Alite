@@ -123,13 +123,13 @@ public final class InfoGaugeRenderer implements Serializable {
 	}
 	
 	private final float extractAltitude(float alpha) {
-		float altitude = (float) alite.getCobra().getAltitude();
+		float altitude = alite.getCobra().getAltitude();
 		AliteColors.setGlColor(AliteColors.get().altitude(altitude / PlayerCobra.MAX_ALTITUDE, alpha), Settings.alpha);		
 	    return altitude / PlayerCobra.MAX_ALTITUDE * GAUGE_LENGTH;
 	}
 	
 	private final float extractSpeed(float alpha) {
-		float speed = (float) alite.getCobra().getSpeed();
+		float speed = alite.getCobra().getSpeed();
 		if (-speed > PlayerCobra.MAX_SPEED) {
 			speed = -PlayerCobra.MAX_SPEED;
 		}
